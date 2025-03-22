@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics - Real Examples</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { max-width: 600px; margin: 20px auto; }
+        input, button { margin: 5px; padding: 8px; }
+        .output { margin-top: 20px; padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>JavaScript Basics - Real Examples</h2>
+        
+        <!-- Example 1: Variables & User Input -->
+        <h3>1. Get User Input and Display</h3>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="showName()">Submit</button>
+        <p id="nameOutput"></p>
+
+        <!-- Example 2: Arrays & Loops -->
+        <h3>2. List of Favorite Movies</h3>
+        <button onclick="showMovies()">Show Movies</button>
+        <ul id="movieList"></ul>
+
+        <!-- Example 3: Object Manipulation -->
+        <h3>3. User Profile (Object Example)</h3>
+        <button onclick="showProfile()">Show Profile</button>
+        <div class="output" id="profileOutput"></div>
+    </div>
+
+    <script>
+        // Example 1: Get user input and display
+        function showName() {
+            let name = document.getElementById("username").value;
+            document.getElementById("nameOutput").innerHTML = `Hello, ${name}! Welcome.`;
+        }
+
+        // Example 2: Arrays & Loops
+        let movies = ["Inception", "Interstellar", "The Matrix", "Shutter Island"];
+        function showMovies() {
+            let movieList = document.getElementById("movieList");
+            movieList.innerHTML = ""; // Clear previous list
+            movies.forEach(movie => {
+                let li = document.createElement("li");
+                li.textContent = movie;
+                movieList.appendChild(li);
+            });
+        }
+
+        // Example 3: Object Manipulation
+        function showProfile() {
+            let user = {
+                name: "Mostafa",
+                age: 30,
+                profession: "Cybersecurity Engineer"
+            };
+            document.getElementById("profileOutput").innerHTML = 
+                `<p>Name: ${user.name}</p><p>Age: ${user.age}</p><p>Profession: ${user.profession}</p>`;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
